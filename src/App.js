@@ -1,6 +1,5 @@
 import './App.css'
 import React, { useEffect, useState } from 'react'
-import  Moment from 'moment'
 
 function App() {
 	const [selectData, setSelectData] = useState([])
@@ -53,7 +52,7 @@ function App() {
 				))}
 			</select>
 			<div>
-				<h2>{timeZoneData.timezone}</h2>
+				<h2> Timezone: {timeZoneData.timezone}</h2>
 				<p>Current Date: {timeZoneData.datetime?.replace('T', ', ').slice(0,20)}</p>
         <p></p>
 			</div>
