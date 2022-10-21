@@ -1,5 +1,6 @@
 import './App.css'
 import React, { useEffect, useState } from 'react'
+import  Moment from 'moment'
 
 function App() {
 	const [selectData, setSelectData] = useState([])
@@ -9,7 +10,6 @@ function App() {
 	const handleChange = (e) => {
 		setCurrentOption(e.target.value)
 	}
-
 	useEffect(() => {
 		const timeZones = 'http://worldtimeapi.org/api/timezone'
 
@@ -54,7 +54,8 @@ function App() {
 			</select>
 			<div>
 				<h2>{timeZoneData.timezone}</h2>
-				<p>Datetime: {timeZoneData.datetime}</p>
+				<p>Current Date: {timeZoneData.datetime?.replace('T', ', ').slice(0,20)}</p>
+        <p></p>
 			</div>
 		</div>
 	)
