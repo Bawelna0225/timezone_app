@@ -37,6 +37,10 @@ function App() {
 			}
 		}
 		fetchTimeZone()
+		let fetchTimeZoneInterval = setInterval(() => {
+			fetchTimeZone()
+		}, 5000)
+		return () => clearInterval(fetchTimeZoneInterval)
 	}, [currentOption])
 
 	return (
